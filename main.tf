@@ -9,10 +9,10 @@ terraform {
 
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "euphoric-axon"
+    organization = "test-1"
 
     workspaces {
-      name = "test-1"
+      name = "test1"
     }
   }
 }

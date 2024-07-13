@@ -1,8 +1,18 @@
+
 terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
       version = "~> 3.5"
+    }
+  }
+
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "<YOUR_TERRAFORM_CLOUD_ORGANIZATION>"
+
+    workspaces {
+      name = "your-workspace-name"
     }
   }
 }
@@ -27,7 +37,7 @@ resource "google_compute_instance" "free_vm" {
   network_interface {
     network = "default"
     access_config {
-      // Ephemeral IP
+      // Ephemeral IP for external access
     }
   }
 }

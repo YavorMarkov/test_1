@@ -1,4 +1,0 @@
-# terraform.tfvars
-
-project_id = "euphoric-axon-429311-i7"
-region = "us-central1"

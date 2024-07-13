@@ -9,16 +9,18 @@ terraform {
 
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "<YOUR_TERRAFORM_CLOUD_ORGANIZATION>"
+    organization = "euphoric-axon"
 
     workspaces {
-      name = "your-workspace-name"
+      name = "test-1"
     }
   }
 }
 
 provider "google" {
-  credentials = jsondecode(var.google_credentials)
+  
+  // Note: The `credentials` attribute is omitted because the Google provider
+  // will automatically use the GOOGLE_CREDENTIALS environment variable.
   project     = var.project_id
   region      = var.region
 }
